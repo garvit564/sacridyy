@@ -1,0 +1,930 @@
+body{
+  background-image: url("{% static 'image/glxy.jpg' %}");
+  background-size: cover;
+  background-position: center;
+  padding: 0px;
+  margin: 0px;
+  color: white; /* Set text color to white for better visibility */
+}
+#hl {
+  color: blue;
+}
+
+#nav {
+  background-color: black;
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+  width: auto;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+} 
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+#hc {
+  border: 2px solid none;
+  margin-top: 14rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Add some vertical space between elements */
+}
+
+#iimg {
+  color: aqua;
+  font-size: 28px;
+  margin-left: 20px;
+  letter-spacing: 2px;
+}
+#iinput::-webkit-file-upload-button:hover{
+  background-color:rgb(0, 158, 158);
+}
+#iinput{
+  border: none 2px solid;
+  width: 90px;
+  margin-left: 20px;
+  margin-top: 60px;
+}
+#iinput::-webkit-file-upload-button {
+  text-shadow: black 0px 0px 4px;
+  background-color: aqua;
+  color: white;
+  border: none;
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#imgup{
+  margin-left: 10px;
+  background-color: aqua;
+  border: none;
+  border-radius: 10px;
+  text-shadow: black 0px 0px 4px;
+  color: white;
+  transition: 0.2s;
+  height: 23px;
+  width: 70px;
+}
+
+#imgup:hover{
+  background-color:rgb(0, 158, 158);
+}
+
+input[type="file"] {
+  color: transparent;
+}
+
+
+#gc {
+  border: 2px solid none;
+  color: white;
+  margin-top: 10rem;
+}
+.rmc{
+  margin-left:20px;
+  
+}
+#rrmc{
+  color: aqua;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+#rrrmc{
+  background-color: rgba(0, 0, 0, 0.3);
+  color: skyblue;
+  border: none;
+  border-bottom: 2px dashed skyblue;
+  margin-top: 50px;
+}
+#displaytext {
+  margin-top: 20px;
+  border: skyblue 2px dashed;
+  /* border-right: none; */
+  border-radius: 5px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  /* flex-wrap: wrap; */
+  height: 300px; /* Set the maximum height */
+  overflow-y: scroll; /* Add a vertical scrollbar */
+  overflow-x: hidden;  
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  
+}
+#dsptxtmnt{
+  margin-top: 7px;
+  height: 20px;
+  border:2px none solid;
+  text-align: center;
+  color: aqua;
+  font-size: large;
+  letter-spacing: 1px;
+}
+
+#txtupld{
+  background-color: aqua;
+  color: white;
+  text-shadow: black 0px 0px 4px;
+  border: none;
+  transition: 0.2s;
+  border-radius: 10px;
+  width: 50px;
+}
+
+#txtupld:hover{
+  background-color:rgb(0, 158, 158);
+}
+
+
+#displaytext::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+#displaytext::-webkit-scrollbar-track {
+  background: transparent; /* Color of the track */
+}
+
+#displaytext::-webkit-scrollbar-thumb {
+  background: aqua; /* Color of the scrollbar thumb */
+  border-radius: 25px;
+}
+
+#displaytext::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 173, 173); /* Color of the scrollbar thumb on hover */
+}
+
+
+.text-item {
+  border: 2px solid none; /* Change border style as needed */
+  padding: 7px;
+  margin: 5px;
+  border-radius: 10px;
+  width: fit-content;
+  background-color: skyblue; /* Change background color as needed */
+  display: flex;
+  justify-content: space-between; /*Align items evenly*/
+  /* position: relative; */
+  text-shadow: black 0px 0px 4px;
+  font-size: 13px;
+  letter-spacing: 1px;  
+}
+
+.text-item button {
+  /* left: 420px;  */
+  margin-left: 20px;
+  /* position: absolute; */
+  background-color: aqua;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-shadow: black 0px 0px 4px;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.text-item button:hover{
+  background-color:rgb(0, 158, 158);
+}
+
+#ic{
+  border: none 2px solid;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, aqua 20%, white 50%, aqua 150%);
+  height: 400px;
+  color: white;
+  margin-left: 20px;
+  margin-top: 1rem;
+  width: 740px;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(50px , 70px));
+  grid-gap: 0px;
+  grid-auto-rows: minmax(0px, auto);
+  /* grid-auto-flow: dense; */
+}
+
+
+
+/* Add your additional styling properties here */
+.image-container {
+  position: relative; 
+  width: 100px; 
+  height: 20px; 
+  margin: 10px; 
+  float: left;
+  
+  /* background-color:aqua ; */
+  /* aspect-ratio: 1 / 1; */
+  
+}
+
+ .image-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  /* box-shadow: yellow 0px 0px 200px; */
+ }
+ .image-container img:hover {
+  transform: scale(1.2  ); /* Zoom in by 30% on hover */
+}
+ 
+ .image-checkbox {
+  margin-left: -6px; /* Add some space between image and checkbox */
+  margin-top: 93px;
+  width: fit-content;
+  height: fit-content;
+}
+/* input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  background-color:black;
+}
+
+
+input[type="checkbox"]:checked {
+  background-color: red; 
+}
+
+
+input[type="checkbox"]:hover {
+  background-color: #f0f0f0;
+} */
+
+#del{
+  background-color: aqua;
+  height:30px;
+  width: 200px;
+  margin-top: 5vh;
+  margin-left: 20px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-shadow: black 0px 0px 4px;
+  transition: 0.2s;
+}
+#del:hover{
+  background-color:rgb(0, 158, 158);
+}
+
+/* #image1 {
+ 
+  border: 2px solid yellow; 
+}
+
+#image2 {
+
+   border: 2px solid blue; 
+  
+} */
+
+
+#om-cnt{
+  border: transparent solid 2px;
+  width: 600px;
+  height: 600px;
+  
+  margin: auto;
+  position: relative;
+}
+#om{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 100px;
+  left: 35px;
+  transition: 0.5s;
+}
+#om:hover{
+  transform: scale(1.2);
+ filter: drop-shadow(0px -10px 5px rgb(2, 74, 255));
+  
+}
+
+
+
+/* #abtom{
+  border: 2px solid yellow;
+  height: 200px;
+  color: lightskyblue;
+  margin-top: 50px;
+}
+#h2{
+  margin-left: 0px;
+  margin-top: -20px;
+}
+
+#om-content p {
+  margin-top: -20px;
+    margin-left: 10px; 
+    border: red solid 2px;
+    width: 500px;
+    justify-content: end;
+    color:lightblue;
+} */
+#abtom {
+  border: none 1px solid;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0px;
+  margin-top: 70px;
+}
+
+#abtom h1 {
+  letter-spacing: 2px;
+  color: aqua;
+  font-size: 28px;
+  margin-bottom: 10px;
+  
+}
+#om-content {
+  letter-spacing: 2px;
+  color: skyblue;
+  line-height: 1.8;
+}
+#om-knowledge {
+  border: none 1px solid;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+#om-knowledge h2 {
+  letter-spacing: 2px;
+  color: aqua;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+#om-knowledge p {
+  letter-spacing: 2px;
+  color: skyblue;
+  line-height: 2.2;
+}
+#efrm{
+  margin-top: 13rem;
+  border: none;
+  height: 120px;
+  position: relative;
+}
+#hh22{
+ 
+  margin-top: -5px;
+  color: aqua;
+  letter-spacing: 2px;
+}
+#emaail{
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-bottom: skyblue 2px solid;
+  color: skyblue;
+  margin-top: 35px;
+}
+#emntr{
+  position: absolute;
+  border: none;
+  top: 40px;
+  color: aqua;
+  letter-spacing: 1px;
+}
+#esub{
+  border: none;
+  background-color: aqua;
+  border-radius: 15px;
+  color: white;
+  text-shadow: black 0px 0px 4px;
+}
+#esub:hover{
+  background-color:rgb(0, 158, 158);
+}
+
+ .mantras-container {
+  text-align: center;
+  margin-top: -60px;
+  background-color: aqua;
+  border: 2px transparent solid;
+  border-radius: 60px;
+  height: 100px;
+  width: 700px;
+  margin-left: 420px;
+  opacity: 1;
+  position: relative;
+  z-index: 1; 
+  box-shadow: 0px 0px 50px aqua;
+  overflow: hidden;
+  
+}
+
+
+.mantras-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  list-style: none;
+  padding: 0;
+  background-color: none;
+  width: 650px;
+  height: 25px;
+  margin-left: 440px;
+  margin-top: 160px;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 2;
+  overflow: hidden !important;
+}
+
+
+
+.mantra-item:nth-child(odd) {
+  color: black;
+  font-weight: bold;
+  
+}
+
+
+.mantra-item:nth-child(even) {
+  color: black; 
+  font-weight: bold;
+  
+} 
+
+ .mantra-item {
+  opacity: 0; 
+  animation: fadeInOut 15s infinite; 
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; } 
+  50% { opacity: 1; }
+}  
+
+
+@media screen and (max-width:372px) {
+  body{
+    background-color:black;
+  }
+  #nav {
+    background-color: black;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    border: solid none yellow;
+    width:369px;
+    position:fixed;
+    top: 0px;
+    z-index: 3;
+  }
+  
+  ul {
+    list-style-type: none;
+    /* border: 1px red solid; */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+    border: solid none red;
+    height: 40px;
+    width: 70.6px;
+    font-size: 12px;
+    
+  }
+  
+  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  #om-cnt{
+    border:  white solid none;
+    width: 369px;
+    height: 400px;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 190px;
+  }
+  #om{
+    position: absolute;
+    width: 310px;
+    height: 320px;
+    margin-top: 0px;
+    top: 15px;
+    transition: 0.5s;
+    margin-left: -10px;
+  }
+  #om:hover{
+    transform: scale(1.2);
+   filter: drop-shadow(0px -10px 5px rgb(2, 74, 255));
+    
+  }
+  #abtom{
+    border: none solid yellow;
+    height: 400px;
+    margin-top: 50px;
+    width: 329px;
+  }
+  #h2{
+    color: aqua;
+    margin-left: 0px;
+    margin-top: -20px;
+  }
+  
+  #om-content p {
+      letter-spacing: 1px;
+      font-size: 12px;
+      margin-top: 8px;
+      margin-left: 0px;
+      border: red solid none;
+      width: 315px;
+      height: max-content;
+      color:skyblue;
+      line-height: 25px;
+      text-align: justify;
+      text-justify: inter-word;
+  }
+
+  #om-knowledge {
+    border: none 1px solid;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: yellowgreen none solid;
+    height: 500px;
+    
+  }
+  
+  #om-knowledge h2 {
+    letter-spacing: 2px;
+    color: aqua;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  #om-knowledge p {
+    margin-top: 15px;
+    letter-spacing: 1px;
+    color: skyblue;
+    line-height: 25px;
+    border: 2px none solid;
+    font-size: 12px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  
+  
+ 
+  #gc{
+    border: none;
+    width: 280px;
+    margin-left: 10px;
+  }
+  #rrmc{
+    margin-left: 0px;
+  }
+  .rmc{
+    margin-left:0px;
+  }
+  
+  #displaytext {
+    margin-top: 20px;
+    border: skyblue 2px dashed;
+    /* border-right: none; */
+    border-radius: 5px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    /* flex-wrap: wrap; */
+    height: 300px; /* Set the maximum height */
+    overflow-y: scroll; /* Add a vertical scrollbar */
+    overflow-x: hidden;  
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    
+  }
+  #dsptxtmnt{
+    margin-top: 0px;
+    padding: 5px;
+    height: 20px;
+    border:2px none solid;
+    text-align: center;
+    color: aqua;
+    font-size: large;
+    letter-spacing: 1px;
+  }
+  
+  #txtupld{
+    background-color: aqua;
+    color: white;
+    text-shadow: black 0px 0px 4px;
+    border: none;
+    transition: 0.2s;
+    border-radius: 10px;
+    width: 50px;
+  }
+  
+  #txtupld:hover{
+    background-color:rgb(0, 158, 158);
+  }
+  
+  
+  #displaytext::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+  }
+  
+  #displaytext::-webkit-scrollbar-track {
+    background: transparent; /* Color of the track */
+  }
+  
+  #displaytext::-webkit-scrollbar-thumb {
+    background: aqua; /* Color of the scrollbar thumb */
+    border-radius: 25px; 
+  }
+  
+  #displaytext::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 173, 173); /* Color of the scrollbar thumb on hover */
+  }
+  
+  
+  .text-item {
+    border: 2px solid none; /* Change border style as needed */
+    padding: 7px;
+    margin: 5px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: skyblue; /* Change background color as needed */
+    display: flex;
+    justify-content: space-between; /*Align items evenly*/
+    /* position: relative; */
+    text-shadow: black 0px 0px 4px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-top: 8px;  
+  }
+  
+  .text-item button {
+    /* left: 420px;  */
+    margin-left: 20px;
+    /* position: absolute; */
+    background-color: aqua;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-shadow: black 0px 0px 4px;
+    transition: 0.2s;
+    z-index: 1;
+  }
+  
+
+ 
+  #hc{
+    border: none;
+    margin-top: 15rem;
+    color: white;
+    margin-left: 10px;
+    width: 300px;
+  }
+
+
+   .image-container {
+    position: relative; 
+    width: 50px; 
+    height: 20px; 
+    margin: 10px; 
+    float: left;
+  }
+  
+  #ic {
+    width: 350px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, aqua 20%, white 50%, aqua 150%);
+    border: none;
+    height: 260px;
+    color: white;
+    margin-top: 1rem;
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(10px, 40px));
+    grid-gap: 0px;
+    grid-auto-rows: minmax(75px, auto);
+    position: relative;
+    
+  }
+  #iimg{
+    margin-left: 0px;
+  }
+  
+  .image-container img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    position: absolute;
+    margin-left: -10px;
+    margin-top: -7px;
+    
+  }
+  .image-checkbox {
+    margin-left: -6px; /* Add some space between image and checkbox */
+    margin-top: 56px;
+    width: 10px;
+    height: fit-content;
+  }
+
+#del{
+  text-shadow: black 0px 0px 4px;
+  background-color: aqua;
+  height:25px;
+  width: fit-content;
+  margin-top: 5vh;
+  margin-left: 10px;
+}
+  
+#iinput{
+  margin-left: 0px;
+}
+  
+  /* #image1 {
+   
+    border: 2px solid yellow;
+  }
+  
+  #image2 {
+  
+    border: 2px solid blue;
+    
+  } */
+  
+  #efrm{
+    margin-top: 13rem;
+    border: none;
+    height: 170px;
+    position: relative;
+    margin-left: 10px;
+  }
+  #hh22{
+   
+    margin-top: -5px;
+    color: aqua;
+    letter-spacing: 2px;
+  }
+  #emaail{
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-bottom: skyblue 2px solid;
+    color: skyblue;
+    margin-top: 60px;
+  }
+  #emntr{
+    position: absolute;
+    border: none;
+    top: 65px;
+    color: aqua;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  #esub{
+    border: none;
+    background-color: aqua;
+    border-radius: 15px;
+    color: white;
+    text-shadow: black 0px 0px 4px;
+  }
+  #esub:hover{
+    background-color:rgb(0, 158, 158);
+  }
+  
+ 
+  
+   .mantras-container {
+    text-align: center;
+    margin-top: -40px;
+    background-color: aqua;
+    border: 2px transparent solid;
+    border-radius: 60px;
+    height: 50px;
+    width: 368px;
+    margin-left: 0px;
+    opacity: 1;
+    position: relative;
+    z-index: 1; 
+    box-shadow: 0px 0px 50px aqua;
+    overflow: hidden;
+  }
+  
+  
+  /* .mantras-list {
+    font-size: 20px;
+    list-style: none;
+    padding: 0;
+    border: none ;
+    background-color: transparent;
+    width: 75px;
+    margin-left: 140px;
+    margin-top: 130px;
+    opacity: 1 !important; 
+    z-index: 2; 
+    height: 25px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    
+  } */
+
+
+  .mantras-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 10px; */
+    list-style: none;
+    padding: 0;
+    background-color: transparent; 
+    width: 350px;
+    height: 30px;
+    margin-left: 9px;
+    margin-top: 130px;
+    opacity: 1 !important;
+    position: relative; 
+    z-index: 2; 
+    overflow: hidden !important;
+    border: none red solid; /* Remove the border */
+  }
+  
+  
+  
+  
+  
+  .mantra-item:nth-child(odd) {
+    color: black;
+    font-weight: bold;
+  }
+  
+  
+  .mantra-item:nth-child(even) {
+    color: black;
+    font-weight: bold;
+  } 
+
+   .mantra-item {
+    font-size: 10px;
+    width: fit-content;
+    margin-top: 25px;
+    opacity: 0; 
+    animation: fadeInOut 15s infinite; 
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; } 
+    50% { opacity: 1; }
+  }  
+}

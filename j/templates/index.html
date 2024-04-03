@@ -1,0 +1,192 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- Include your CSS file in the head section -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/om.css' %}">
+</head>
+    
+ <body style="background-image: url('{% static "image/star4.jpg" %}');
+background-size: cover;
+background-repeat: repeat;
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif; /* Optional: Specify your preferred font family */">
+    
+
+<script src="{% static 'js/cd.js' %}"></script>
+
+    {% include "navbar.html" %}
+
+    <div id='om-cnt'>
+        <img id='om' src='{% static "image/pngegg.png" %}'>
+    </div>
+    
+    
+
+    {% block mantras %}
+    <ul id='mantra-list' class="mantras-list">
+        {% for mantra in mantras %}
+            <li class="mantra-item">{{ mantra }}</li>
+        {% endfor %}
+    </ul>
+    
+    <div class="mantras-container">
+        <!-- Your other content here -->
+    </div>
+    {% endblock %} 
+    
+    
+    
+    
+
+
+{% comment %} <div id='abtom'>
+    <div id='h2'><h1>Something should be known about ॐ....</h1></div>
+    <div id='om-content'>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et magna urna. Fusce nec feugiat risus, sed commodo est. Nullam malesuada felis at magna vestibulum, id scelerisque risus bibendum.</p>
+    </div>
+</div> {% endcomment %}
+
+
+
+<div id='abtom'>
+    <div id='h2'>
+        <h1><b>ॐ</b> - The Sacred Sound...</h1>
+    </div>
+    <div id='om-content'>
+        <p>
+          -  <b>ॐ</b>, also spelled as "<b>Aum</b>," is a sacred sound and a spiritual icon in Indian religions.<br>
+        
+          -  It is considered the essence of the universe and a symbol of divine presence.<br>
+     
+          -  The sound of <b>ॐ</b> is believed to encompass all words, all sounds, and all languages.<br>
+       
+          -  The symbol of <b>ॐ</b> consists of three curves, one semicircle, and a dot. <br>
+       
+          -  The curves represent the waking state (<b>A</b>), the dream state (<b>U</b>), and the deep sleep state (<b>M</b>), while the dot symbolizes the absolute state of consciousness (Turiya).
+        </p>   
+    </div>
+</div>
+
+<div id="om-knowledge">
+    <h2>Significance of <b>ॐ</b>...</h2>
+    <p>
+        - <b>ॐ</b> is considered a <b>powerful mantra</b> and is often chanted at the beginning and end of prayers, <b>meditations</b>, and spiritual practices.<br>
+        - It is believed to create a sense of unity with the divine and the universe, leading to spiritual growth and enlightenment.<br>
+        - The vibrations produced by chanting ॐ are said to have a calming effect on the mind and body, promoting inner peace and harmony.<br>
+        - In Hinduism, <b>ॐ</b> is associated with <b>Lord Brahma</b> (the creator), <b>Lord Vishnu</b> (the preserver), and <b>Lord Shiva</b> (the destroyer), representing the cycle of <b>creation, preservation</b>, and <b>destruction</b> in the universe.<br>
+        - The sound of <b>ॐ</b> is considered the sound of the universe, representing the cosmic energy that flows through all living beings.<br>
+    </p>
+</div>
+
+
+
+    {%block text%}
+    <div id='gc'>
+    <form method="post" action="{% url 'writetext' %}">
+        {% csrf_token %}
+        <label id='rrmc' class="rmc" for='text'><b>You can upload some mantras here...<b/> </label><br>
+        <input id='rrrmc' class="rmc" type='text' name='text' required>
+        <button id='txtupld' type='submit'>sub</button>
+    </form>
+</div>
+    {%endblock%}
+{% comment %} 
+<div id='displaytext'>
+    {% for text in texts %}
+        <div class="text-item">{{ text.text }}</div>
+    {% endfor %}
+</div> {% endcomment %}
+
+<div id='displaytext'>
+    <div id='dsptxtmnt'>MANTRAS</div>
+    {% for text in texts %}
+        <div class="text-item">
+            {{ text.text }}
+            <form method="post" action="{% url 'delete_text' text.id %}">
+                {% csrf_token %}
+                <button id='txtdlt' type="submit">Delete</button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+{% block upimage %}
+<div id="hc">
+<form method="post" enctype="multipart/form-data" action="{% url 'upload_image' %}">
+    {% csrf_token %}
+    
+    <label id='iimg' for="image"><b>You can upload some spiritual images here...</b></label><br>
+    <input id='iinput' type="file" name="image" accept="image/*" required>
+    {% if images|length >= 15 %}
+        <button type="submit" disabled>Upload</button>
+    {% else %}
+        <button id='imgup' type="submit">Upload</button>
+    {% endif %}
+</form>
+</div>
+{% endblock %}
+
+
+
+{% block dltimg %}
+<form method="post" action="{% url 'delete_images' %}">
+    {% csrf_token %}
+    <!-- Loop through images and display checkboxes -->
+    <div id="ic">
+        {% for image in images %}
+            <div class="image-container">
+                <div id="image{{ forloop.counter }}" class="image-container">
+                    <img src="{{ image.image.url }}" >
+                </div>
+                <div id="image_checkbox{{ forloop.counter }}" class="image-checkbox">
+                    <input type="checkbox" name="selected_images" value="{{ image.id }}">
+                </div>
+            </div>
+
+            <div id="after-delete"> 
+            </div>
+        {% endfor %}
+       
+    </div>
+    <button id='del' type="submit">Delete Selected Images</button>
+</form>
+{% endblock %}
+
+
+
+
+<form method="post" id='efrm' action="{% url 'email_form' %}">
+    {% csrf_token %}
+    <h2 id='hh22'>To get a random Mantra to your email id...</h2><br>
+    <p id='emntr'>Please enter your email id here to get random mantra...</p>
+
+    <input type="email" id="emaail" name="email" required>
+    <button type="submit" id='esub'>Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+    
+                
+</body>
+</html> 
+
+
+
+
+
